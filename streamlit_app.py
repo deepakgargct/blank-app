@@ -1,6 +1,3 @@
-# Install PRAW if not installed
-!pip install praw
-
 # Import required libraries
 import praw
 import pandas as pd
@@ -8,7 +5,7 @@ import os
 import warnings
 from datetime import datetime, timedelta
 
-# Suppress PRAW async warning in Google Colab
+# Suppress PRAW async warning
 warnings.filterwarnings("ignore", category=UserWarning)
 
 # Store credentials securely (REPLACE with your actual values)
@@ -70,6 +67,3 @@ csv_filename = f"{subreddit_name}_top_100_last_6_months.csv"
 reddit_data.to_csv(csv_filename, index=False)
 
 print(f"✅ Successfully saved top 100 posts from r/{subreddit_name} (last 6 months) to {csv_filename}!")
-
-# Display first few rows
-reddit_data.head()
